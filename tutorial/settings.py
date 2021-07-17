@@ -74,7 +74,14 @@ WSGI_APPLICATION = 'tutorial.wsgi.application'
 # Rest Framework configuration
 
 REST_FRAMEWORK = {
-
+    # seta o tipo de permissão da aplicação como um todo
+    # caso alguma permissão seja setada a nível de view, ela sobrescreve esse default
+    # https://www.django-rest-framework.org/api-guide/permissions/#setting-the-permission-policy
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
 }
 
 
