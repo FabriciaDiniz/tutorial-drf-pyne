@@ -8,7 +8,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     # https://www.django-rest-framework.org/api-guide/serializers/#hyperlinkedmodelserializer
     class Meta:
         model = User
-        fields = ['username', 'email', 'url', 'receitas']
+        fields = ['username', 'email', 'url']
 
 
 class ReceitasSerializer(serializers.ModelSerializer):
